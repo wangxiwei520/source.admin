@@ -6,10 +6,7 @@
     <title>Source Admin</title>
     <!-- Tell the browser to be responsive to screen width -->
     <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
-    <!--  外部引入替换 -->
-    {block name="link"}
 
-    {/block}
     <link rel="stylesheet" href="/static/bootstrap/css/bootstrap.min.css">
     <!-- Font Awesome -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
@@ -38,6 +35,10 @@
     <!--[if lt IE 9]>
     <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
     <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <!--  外部引入替换 -->
+    {block name="link"}
+
+    {/block}
     <![endif]-->
 </head>
 <body class="hold-transition skin-blue sidebar-mini">
@@ -118,7 +119,7 @@
                     </a>
                     <ul class="treeview-menu">
 
-                        <li class="active"><a href="index.html"><i class="fa fa-circle-o"></i> 首页列表</a></li>
+                        <li class="active"><a href="/admin/admin/index"><i class="fa fa-circle-o"></i> 首页列表</a></li>
                         <li><a href="index2.html"><i class="fa fa-circle-o"></i> 系统配置</a></li>
                     </ul>
                 </li>
@@ -130,7 +131,7 @@
                     </a>
                     <ul class="treeview-menu">
 
-                        <li><a href="index2.html"><i class="fa fa-circle-o"></i> 展示列表</a></li>
+                        <li><a href="/admin/user/index"><i class="fa fa-circle-o"></i> 展示列表</a></li>
                     </ul>
                 </li>
             </ul>

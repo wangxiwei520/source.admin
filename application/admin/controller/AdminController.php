@@ -11,7 +11,7 @@ class AdminController extends Controller
     public function index(){
 
 //        var_dump(1);exit;
-       $models =  Db::name('admin')->select();
+//       $models =  Db::name('admin')->select();
         return $this->fetch('index',compact('models'));
     }
 }
