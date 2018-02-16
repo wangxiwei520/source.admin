@@ -36,43 +36,27 @@
                 <div class="modal-content">
                     <div class="modal-header">
                         <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-                        <h4 class="modal-title" id="myModalLabel">添加商品</h4>
+                        <h4 class="modal-title" id="myModalLabel">添加用户</h4>
                     </div>
                     <div class="modal-body">
                         <!--                        表单-->
-                        <form action="add" method="post">
+                        <form action="#" method="post" id="sth">
                             <div class="form-group">
-                                <label for="exampleInputEmail1">商品名称</label>
-                                <input type="text" class="form-control" name="goods_name" id="exampleInputEmail1" placeholder="请填商品名称">
-                            </div>
-                            <label for="exampleInputEmail1">商品分类</label>
-                            <select class="form-control" name="category_id">
-                                <option>1</option>
-                                <option>2</option>
-                                <option>3</option>
-                                <option>4</option>
-                                <option>5</option>
-                            </select>
-                            <div class="form-group">
-                                <label for="exampleInputPassword1">价格</label>
-                                <input type="text" name="shop_prcie" class="form-control" id="exampleInputPassword1" placeholder="请填写商品价格">
+                                <label for="exampleInputEmail1">用户名</label>
+                                <input type="text" class="form-control" name="username" id="exampleInputEmail1" placeholder="请填用户名">
                             </div>
                             <div class="form-group">
-                                <label for="exampleInputPassword1">商品状态</label><br/>
-                                <label class="radio-inline">
-                                    <input type="radio" name="status" id="inlineRadio2" value="1"> 激活
-                                </label>
-                                <label class="radio-inline">
-                                    <input type="radio" name="status" id="inlineRadio3" value="2"> 禁用
-                                </label>
+                                <label for="exampleInputPassword1">密码</label>
+                                <input type="text" name="password" class="form-control" id="exampleInputPassword1" placeholder="请填写用户密码">
                             </div>
-                            <label for="exampleInputPassword1">商品图片</label><br/>
-                            <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#img">选择图片</button>
-                            <!--                        表单结束-->
+                            <div class="form-group">
+                                <label for="exampleInputPassword1">电话</label>
+                                <input type="text" name="phone" class="form-control" id="exampleInputPassword1" placeholder="请填写电话">
+                            </div>
                     </div>
                     <div class="modal-footer">
-                        <button type="button" class="btn btn-default" data-dismiss="modal">关闭</button>
-                        <button type="submit" class="btn btn-default" id="tianjia">添加</button>
+                        <button type="button" class="btn btn-primary" data-dismiss="modal">关闭</button>
+                        <button type="button" class="btn btn-primary add" url="add"  >添加</button>
                         </form>
                     </div>
                 </div>
@@ -87,31 +71,33 @@
                 <div class="modal-content">
                     <div class="modal-header">
                         <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-                        <h4 class="modal-title" id="myModalLabel">修改权限</h4>
+                        <h4 class="modal-title" id="myModalLabel">修改用户</h4>
                     </div>
                     <div class="modal-body">
                         <!--                        表单-->
-                        <form action="edit" method="post">
+                        <form action="#" method="post" id="alter">
                             <div class="form-group">
-                                <label for="exampleInputEmail1">权限路径</label>
-                                <input type="text" class="form-control" name="name" id="name" placeholder="请填权限路径   如 : admin/admin/index">
+                                <label for="exampleInputEmail1">用户名</label>
+                                <input type="text" class="form-control" name="username" id="username" placeholder="请填用户名">
                             </div>
                             <div class="form-group">
-                                <label for="exampleInputPassword1">权限名</label>
-                                <input type="text" name="title" class="form-control" id="title" placeholder="请填写权限名">
+                                <label for="exampleInputPassword1">电话</label>
+                                <input type="text" name="phone" class="form-control" id="phone" placeholder="请填写电话">
+                                <input type="hidden" name="id" class="form-control" id="id" placeholder="请填写电话">
                             </div>
-                            <div class="form-group">
-                                <label for="exampleInputPassword1">附加条件</label>
-                                <input type="text" name="condition" class="form-control" id="condition" placeholder="请填写附加条件">
-                                <input type="hidden" name="id" class="form-control" id="id"/>
-                            </div>
-
+                            <label for="exampleInputPassword1">会员状态</label><br/>
+                            <label class="radio-inline">
+                                <input type="radio" name="status" id="inlineRadio1" value="1"> 激活
+                            </label>
+                            <label class="radio-inline">
+                                <input type="radio" name="status" id="inlineRadio2" value="0"> 禁用
+                            </label>
 
                             <!--                        表单结束-->
                     </div>
                     <div class="modal-footer">
-                        <button type="button" class="btn btn-default" data-dismiss="modal">关闭</button>
-                        <button type="submit" class="btn btn-default">修改</button>
+                        <button type="button" class="btn btn-primary" data-dismiss="modal">关闭</button>
+                        <button type="button" class="btn btn-primary mind" url="edit">修改</button>
                         </form>
                     </div>
                 </div>
@@ -145,14 +131,17 @@
                     <td  class="text-center" valign="top"><?=$model['username']?></td>
                     <td  class="text-center" valign="top"><img src="<?=$model['img']?>" width="50px;"></td>
                     <td  class="text-center" valign="top"><?=$model['phone']?></td>
-                    <td  class="text-center" valign="top"><?=$model['created_at']?></td>
-                    <td  class="text-center" valign="top"><?=$model['login_at']?></td>
-                    <td  class="text-center" valign="top"><?=$model['place']?></td>
+                    <td  class="text-center" valign="top"><?=date('Y-m-d H:i:s',$model['created_at'])?></td>
+                    <td  class="text-center" valign="top"><?=date('Y-m-d H:i:s',$model['login_at'])?></td>
+                    <td  class="text-center" valign="top">
+                        <?=$model['place']?$model['place']:'从未登录';?></td>
                     <td  class="text-center" valign="top"><?=$model['login_ip']?></td>
                     <td  class="text-center" valign="top"><span class="<?=$model['status']?'glyphicon glyphicon-ok':'glyphicon glyphicon-remove';?>" style="color: <?=$model['status']?'green':'red';?>"></span></td>
                     <td  class="text-center" valign="top">
-                        <a class="edit" id="<?=$model['id']?>"><span class="btn btn-<?=$model['status']?'danger':'success';?>"><?=$model['status']?'禁用':'启用';?></span><a/>
-                        <a class="edit" id="<?=$model['id']?>"><span class="btn btn-primary glyphicon glyphicon-cog" data-toggle="modal" data-target="#edit"></span><a/>
+                        <a class="activate" status_id="<?=$model['status'] ?>" activate_id="<?=$model['id'] ?>"><span class="btn btn-<?=$model['status']?'danger':'success';?>"><?=$model['status']?'禁用':'启用';?></span><a/>
+
+                        <a class="edit" ><span class="btn btn-primary glyphicon glyphicon-cog edit" data-toggle="modal" data-target="#edit" id="<?=$model['id'] ?>"></span><a/>
+
                             <a class="del"  href="#" url="del" url_id="<?=$model['id'] ?>" ><span class="btn btn-danger glyphicon glyphicon-trash" ></span></a>
                     </td>
                 </tr>
@@ -166,7 +155,38 @@
     </div>
 
 </div>
+<form class="activate" id="activate">
+    <input type="hidden" name="activate_id" id="activate_id">
+    <input type="hidden" name="status_id" id="status_id">
+</form>
+{/block}
 
+{block name="script"}
+<script>
+
+        $('.activate').click(function () {
+            $("#activate_id").val($(this).attr('activate_id'));
+            $("#status_id").val($(this).attr('status_id'));
+            $.post('activate',$("#activate").serialize(),function (data) {
+                if(data.code){
+                    layer.msg(data.msg);
+                    /*三秒后跳转到相应路径 此处路径为后台跳转路径*/
+                    if(data.url!=null){
+                        setTimeout(function () {
+                            location.href=data.url;
+                        }, 1500);
+                    }
+                }else {
+                    //错误打印错误信息
+                    layer.msg(data.msg);
+
+                }
+            });
+
+        });
+
+
+</script>
 {/block}
 
 

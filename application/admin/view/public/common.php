@@ -29,7 +29,6 @@
     <link rel="stylesheet" href="/static/plugins/daterangepicker/daterangepicker-bs3.css">
     <!-- bootstrap wysihtml5 - text editor -->
     <link rel="stylesheet" href="/static/plugins/bootstrap-wysihtml5/bootstrap3-wysihtml5.min.css">
-
     <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
     <!--[if lt IE 9]>
@@ -83,7 +82,7 @@
                                     <a href="#" class="btn btn-default btn-flat">锁定屏幕</a>
                                 </div>
                                 <div class="pull-right">
-                                    <a href="#" class="btn btn-default btn-flat">退出登录</a>
+                                    <a href="/admin/admin/logout" class="btn btn-default btn-flat">退出登录</a>
                                 </div>
                             </li>
                         </ul>
@@ -228,6 +227,10 @@
 
 
         </section>{/block}
+
+                <form id="fake">
+                    <input type="hidden" id="fake_id" name="id">
+                </form>
                 <div>
         </section>
         <!-- /.content -->
@@ -260,13 +263,14 @@
 <!-- jQuery 2.1.4 -->
 <script src="/static/plugins/jQuery/jQuery-2.1.4.min.js"></script>
 <script src="https://code.jquery.com/ui/1.11.4/jquery-ui.min.js"></script>
+<script type="text/javascript" src="http://malsup.github.io/min/jquery.blockUI.min.js"></script>
 {block name="script"} {/block}
 <script>
     $.widget.bridge('uibutton', $.ui.button);
 </script>
 <script src="/static/bootstrap/js/bootstrap.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/raphael/2.1.0/raphael-min.js"></script>
-<script src="/static/plugins/morris/morris.min.js"></script>
+<!--<script src="/static/plugins/morris/morris.min.js"></script>-->
 <script src="/static/plugins/sparkline/jquery.sparkline.min.js"></script>
 <script src="/static/plugins/jvectormap/jquery-jvectormap-1.2.2.min.js"></script>
 <script src="/static/plugins/jvectormap/jquery-jvectormap-world-mill-en.js"></script>
@@ -278,7 +282,9 @@
 <script src="/static/plugins/slimScroll/jquery.slimscroll.min.js"></script>
 <script src="/static/plugins/fastclick/fastclick.js"></script>
 <script src="/static/dist/js/app.min.js"></script>
-<script src="/static/dist/js/pages/dashboard.js"></script>
+<!--<script src="/static/dist/js/pages/dashboard.js"></script>-->
 <script src="/static/dist/js/demo.js"></script>
+<script src="/static/layer/layer.js"></script>
+<script src="/static/layer/layeradd.js"></script>
 </body>
 </html>
