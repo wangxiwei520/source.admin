@@ -9,9 +9,24 @@ use think\Request;
 class UserController extends BaseController
 {
    public function index(){
-   //var_dump(1);exit;
-       $models =  Db::name('admin')->select();
-       return $this->fetch('index',compact('models'));
+       $where = '1=1';
+
+       if(!empty($username = input("username"))){
+           $where .= "  and username like '%$username%'";
+       }
+       if(!empty($phone = input("phone"))){
+           $where .= "  and  phone like '%$phone%'";
+       }
+       $count = Db::name('admin')->where($where)->order('id')->count();
+       $models =  Db::name('admin')->where($where)->order('id')->paginate(5,$count,['query'=>['username'=>$username,'phone'=>$phone],'type' => 'bootstrap3']);
+        $page =  $models->render();
+       if(request()->isAjax()){
+           //如果是ajax请求，则渲染到该页面
+//           return $html;
+
+           return  $this->fetch('list',compact('models','page'));
+       }
+       return $this->fetch('index',compact('models','page'));
 
    }
    public  function add(){
@@ -50,14 +65,13 @@ class UserController extends BaseController
 
         $data['status']=input('status_id');
         $data['id']=input('activate_id');
-        if( $data['status']==='1'){
-            $data['status']='0';
-        }else{
-            $data['status']='1';
-        }
-//       var_dump(input(),$data);exit;
-       Db::name('admin')->update($data);
+        $data['status']? $data['status']='0': $data['status']='1';
+        Db::name('admin')->update($data);
         return prompt('修改成功','/admin/user/index');
+
+    }
+    public function img(){
+        return $this->fetch('img');
 
     }
 }

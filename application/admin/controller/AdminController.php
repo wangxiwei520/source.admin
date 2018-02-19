@@ -19,7 +19,7 @@ class AdminController extends BaseController
 
         if (\request()->isPost()) {
            $user = Db::name('admin')->where('username',input('username'))->find();
-            if ($user && password_verify(input('password'),$user['password'])) {
+            if ($user && $user['status']=='1' && password_verify(input('password'),$user['password'])) {
                 session('login','login');
                 if(input('checkbox')!=null){
 //                    var_dump(11);exit;
@@ -27,7 +27,7 @@ class AdminController extends BaseController
                 return $this->fetch('index');
             }else{
 
-                return '用户名或密码错误';
+                return '您没有登录权限';
             }
         }
         $ip =  $_SERVER["REMOTE_ADDR"];
