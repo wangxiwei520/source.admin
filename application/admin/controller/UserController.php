@@ -66,6 +66,9 @@ class UserController extends BaseController
         $data['status']=input('status_id');
         $data['id']=input('activate_id');
         $data['status']? $data['status']='0': $data['status']='1';
+        if ($data['id']=='71') {
+            return prompt('没有权限');
+        }
         Db::name('admin')->update($data);
         return prompt('修改成功','/admin/user/index');
 

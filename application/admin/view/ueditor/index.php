@@ -7,7 +7,6 @@
 <form action="add" method="post" enctype="multipart/form-data">
     <script id="container" name="content" type="text/plain">
     </script>
-    <input type="file" name="file">
     <button type="submit" class="btn btn-success">提交</button>
 </form>
 

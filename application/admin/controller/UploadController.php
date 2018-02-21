@@ -20,7 +20,6 @@ class UploadController extends Controller
         $config = [
             'accessKey' => 'of6mXn-m3plRAfRWgarjF4B3g_d8_lP1-51pWy0k',//AK
             'secretKey' => 'MEjtCsodnpJBBX4bb-MQk5q-OEEDXgAfWbL5jfZx',//SK
-            'domain' => 'http://p2dog8slb.bkt.clouddn.com',//临时域名
             'bucket' => 'yii2',//空间名称
         ];
         $auth = new Auth($config['accessKey'], $config['secretKey']);
