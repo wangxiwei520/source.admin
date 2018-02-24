@@ -24,7 +24,8 @@
         "workerman/workerman-for-win": "^3.5",
         "workerman/phpsocket.io": "^1.1",
         "tp5er/tp5-databackup": "dev-master",
-        "mrgoon/aliyun-sms": "dev-master"
+        "mrgoon/aliyun-sms": "dev-master",
+        "phpoffice/phpexcel": "^1.8"
     },
     "autoload": {
         "psr-4": {

@@ -19,7 +19,6 @@ class DownloadController extends Controller
       }
 //      var_dump(file_exists($fileName));exit;
       downloadFile($fileName);
-
   }
     public function downloadFile($url)
     {
@@ -32,7 +31,7 @@ class DownloadController extends Controller
         $file = file_get_contents($url);
         $path = 'url/'.$fileName;
         file_put_contents($path,$file);
-        downloadFile('url/'.$fileName);
+        downloadFile($path);
         unlink($path);
     }
 
