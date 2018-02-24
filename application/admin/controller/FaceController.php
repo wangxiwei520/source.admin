@@ -27,7 +27,7 @@ public function face(){
     $filepath = 'images/';
     $imgpath=$filepath.uniqid().'.jpg';
     if(!move_uploaded_file($tmp,$imgpath)){
-        echo "上传失败";
+        return '上传失败';
     }
     $image = file_get_contents($imgpath);
 // 调用人脸检测
@@ -39,6 +39,9 @@ public function face(){
 
 // 带参数调用人脸检测
     $img =  $client->detect($image, $options);
+    if ($img["result_num"]=='0') {
+   return '没有检测到人脸';
+    }
 //    var_dump($img);exit;
     return $this->fetch('face',compact('img','imgpath'));
 

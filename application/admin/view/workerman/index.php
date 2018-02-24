@@ -20,8 +20,8 @@
                     <div class="chat01">
                         <div class="chat01_title">
                             <ul class="talkTo">
-                                <li><a href="javascript:;">简易聊天室</a></li></ul>
-                            <a class="close_btn" href="javascript:;"></a>
+                                <li><a href="javascript:;">简易聊天工具</a></li></ul>
+
                         </div>
                         <div class="chat01_content" id="content">
                         </div>

@@ -56,7 +56,7 @@
                  <button type="submit" class="btn btn-success" id="qiniu" style="margin-left: 180px;">上传</button>
             </form>
             <br>
-            <div style="font-size: 15px;"><span style="color: red;">注意:</span><span>测试请输入你七牛对应的信息。</span></div>
+            <div style="font-size: 15px;"><span style="color: red;">注意:</span><span>提供单人检测</span></div>
         </div>
     </div>
 

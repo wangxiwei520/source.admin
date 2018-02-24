@@ -22,7 +22,9 @@
         "endroid/qr-code": "^2.5",
         "topthink/think-worker": "^1.0",
         "workerman/workerman-for-win": "^3.5",
-        "workerman/phpsocket.io": "^1.1"
+        "workerman/phpsocket.io": "^1.1",
+        "tp5er/tp5-databackup": "dev-master",
+        "mrgoon/aliyun-sms": "dev-master"
     },
     "autoload": {
         "psr-4": {

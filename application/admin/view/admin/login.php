@@ -2,7 +2,7 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>大气的登录页面模板</title>
+<title>Source.admin</title>
 
 <style type="text/css">
 *{
