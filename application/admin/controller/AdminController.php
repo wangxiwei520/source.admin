@@ -24,6 +24,10 @@ class AdminController extends BaseController
                 if(input('checkbox')!=null){
 //                    var_dump(11);exit;
                 }
+                cookie('time',date('Y-m-d H:i:s',time()));
+                $user['place']=session('city');
+                $user['login_at']=time();
+                Db::name('admin')->update($user);
                 return $this->fetch('index');
             }else{
 

@@ -108,6 +108,7 @@
         </div>
         <!--        修改结束-->
         <br/>
+
     </div>
 <div id="list">
     <div class="box-body">
@@ -137,9 +138,9 @@
                     <td  class="text-center" valign="top">
                         <?=$model['place']?$model['place']:'从未登录';?></td>
                     <td  class="text-center" valign="top"><?=$model['login_ip']?></td>
-                    <td  class="text-center" valign="top"><span class="<?=$model['status']?'glyphicon glyphicon-ok':'glyphicon glyphicon-remove';?>" style="color: <?=$model['status']?'green':'red';?>"></span></td>
+                    <td  class="text-center" valign="top"><span class="<?=$model['status']?'glyphicon glyphicon-ok':'glyphicon glyphicon-remove';?> font" style="color: <?=$model['status']?'green':'red';?>" ></span></td>
                     <td  class="text-center" valign="top">
-                        <a class="activate" status_id="<?=$model['status'] ?>" activate_id="<?=$model['id'] ?>"><span class="btn btn-<?=$model['status']?'danger':'success';?>"><?=$model['status']?'禁用':'启用';?></span><a/>
+                        <a class="activate" status_id="<?=$model['status'] ?>" activate_id="<?=$model['id'] ?>"><span class="btn btn-<?=$model['status']?'danger':'success';?> status" ><?=$model['status']?'禁用':'启用';?></span><a/>
 
                             <a class="edit" ><span class="btn btn-primary glyphicon glyphicon-cog edit" data-toggle="modal" data-target="#edit" id="<?=$model['id'] ?>"></span><a/>
 
@@ -171,6 +172,7 @@
         $("#status_id").val($(this).attr('status_id'));
         $.post('activate',$("#activate").serialize(),function (data) {
             if(data.code){
+
                 layer.msg(data.msg);
                 /*三秒后跳转到相应路径 此处路径为后台跳转路径*/
                 if(data.url!=null){

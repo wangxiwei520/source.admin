@@ -8,7 +8,9 @@
 use Workerman\Worker;
 use PHPSocketIO\SocketIO;
 require_once '../vendor/autoload.php';
+
 $io = new SocketIO(3120);
+
 // 监听一个http端口，通过http协议访问这个端口可以向所有客户端推送数据(url类似http://ip:9191?msg=xxxx)
 $io->on('workerStart', function()use($io) {
     $inner_http_worker = new Worker('http://0.0.0.0:99');
